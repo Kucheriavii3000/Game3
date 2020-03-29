@@ -36,7 +36,6 @@ class AnimateSprite(pg.sprite.Sprite):
         self.rect = self.image.get_rect(center=(x, y))
         self.images[0] = self.image
 
-
     def update(self):
         self.index += 0.1
         self.image = self.images[int(self.index % len(self.images))]
@@ -47,8 +46,8 @@ class AnimateSprite(pg.sprite.Sprite):
 bear = AnimateSprite(x=WIDHT // 2, y=HEIGHT // 2, img=images1)
 cat = AnimateSprite(x=WIDHT // 2, y=HEIGHT // 2, img=images2)
 sprites = pg.sprite.Group(bear, cat)
-sprites.remove(cat) # спрятаться
-sprites.add(cat) # показаться
+sprites.remove(cat)  # спрятаться
+sprites.add(cat)  # показаться
 bearW, bearH = bear.image.get_width(), bear.image.get_height()
 catW, catH = cat.image.get_width(), cat.image.get_height()
 K = bearH * 0.15
